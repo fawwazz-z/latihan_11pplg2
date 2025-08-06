@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:latihan_11pplg2/pages/CalculatorPage.dart';
 import 'LoginPage.dart';
 
 void main() {
@@ -10,9 +12,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  LoginPages(),
+      home: Calculator(),
     );
   }
 }

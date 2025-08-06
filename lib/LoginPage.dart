@@ -19,7 +19,7 @@ class _LoginPagesState extends State<LoginPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("LoginPages")),
-      body: Container(
+      body: Container(  
         margin: EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
