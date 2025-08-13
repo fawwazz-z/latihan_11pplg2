@@ -1,57 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:latihan_11pplg2/components/CustomButton.dart';
-import 'package:latihan_11pplg2/components/CustomTextField.dart';
-import 'package:latihan_11pplg2/controllers/CalculatorController.dart';
+import 'package:latihan_11pplg2/controllers/calculator_controller.dart';
+import 'package:latihan_11pplg2/widget/widgetbutton.dart';
+import 'package:latihan_11pplg2/widget/textfield.dart';
+import 'package:latihan_11pplg2/routes/routes.dart';
 
-class Calculator extends StatelessWidget {
+class CalculatorPage extends StatelessWidget {
+  CalculatorPage({super.key});
+
   final CalculatorController calculatorController = Get.put(CalculatorController());
-
-  Calculator({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: const Text("Kalkulator"),
+        title: const Text("Calculator"),
         centerTitle: true,
-        backgroundColor: Colors.green,
-        elevation: 2,
+        backgroundColor: const Color.fromARGB(255, 255, 0, 166),
+        foregroundColor: Colors.white,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Customtextfield(
+            Textfield(
+              hint: "Angka 1",
               controller: calculatorController.txtangka1,
-              label: "Masukkan Angka 1",
-              labelcolor: Colors.green,
-              pass: false,
             ),
-            const SizedBox(height: 12),
-            Customtextfield(
+            const SizedBox(height: 16),
+            Textfield(
+              hint: "Angka 2",
               controller: calculatorController.txtangka2,
-              label: "Masukkan Angka 2",
-              labelcolor: Colors.green,
-              pass: false,
             ),
             const SizedBox(height: 24),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Custombutton(
-                  myText: "+",
-                  myTextColor: Colors.white,
-                  onPressed: calculatorController.tambah,
-                  backgroundColor: Colors.orangeAccent,
+                CustomButton(
+                  textColor: Colors.white,
+                  textt: "+",
+                  press: calculatorController.tambah,
+                  color: const Color.fromARGB(255, 255, 0, 153),
                 ),
-                Custombutton(
-                  myText: "-",
-                  myTextColor: Colors.white,
-                  onPressed: calculatorController.kurang,
-                  backgroundColor: Colors.orangeAccent,
+                CustomButton(
+                  textColor: Colors.white,
+                  textt: "-",
+                  press: calculatorController.kurang,
+                  color: const Color.fromARGB(255, 255, 0, 230),
                 ),
               ],
             ),
@@ -59,46 +55,39 @@ class Calculator extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Custombutton(
-                  myText: "×",
-                  myTextColor: Colors.white,
-                  onPressed: calculatorController.kali,
-                  backgroundColor: Colors.orangeAccent,
+                CustomButton(
+                  textColor: Colors.white,
+                  textt: "×",
+                  press: calculatorController.kali,
+                  color: const Color.fromARGB(255, 255, 0, 144),
                 ),
-                Custombutton(
-                  myText: "÷",
-                  myTextColor: Colors.white,
-                  onPressed: calculatorController.bagi,
-                  backgroundColor: Colors.orangeAccent,
+                CustomButton(
+                  textColor: Colors.white,
+                  textt: "÷",
+                  press: calculatorController.bagi,
+                  color: const Color.fromARGB(255, 255, 0, 217),
                 ),
               ],
             ),
-            const SizedBox(height: 30),
-
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.green[100],
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Obx(() {
-                return Text(
-                  "Hasil: ${calculatorController.textresult.value}",
-                  style: const TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green,
-                  ),
-                );
-              }),
-            ),
-
-            const SizedBox(height: 30),
-            Custombutton(
-              myText: "Clear",
-              myTextColor: Colors.white,
-              onPressed: calculatorController.clear,
-              backgroundColor: Colors.deepPurple,
+            const SizedBox(height: 24),
+            Obx(() {
+              return Text(
+                'Hasil: ${calculatorController.hasil.value}',
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              );
+            }),
+            const SizedBox(height: 24),
+            CustomButton(
+              textColor: Colors.white,
+              textt: "Move to Football Players",
+              press: () {
+                calculatorController.clear();
+                Get.toNamed(AppRoutes.playerList);
+              },
+              color: const Color.fromARGB(255, 255, 0, 174),
             ),
           ],
         ),
