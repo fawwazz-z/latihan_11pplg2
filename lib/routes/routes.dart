@@ -3,7 +3,4 @@ class AppRoutes {
   static const playerList = '/playerList';
   static const playerEdit = '/playerEdit';
   static const bottomNavPage = '/bottomNav';
-
-
-  
 }
