@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      initialRoute: AppRoutes.calculator,
+
+      initialRoute: AppRoutes.bottomNavPage,
       getPages: AppPages.pages,
 
       

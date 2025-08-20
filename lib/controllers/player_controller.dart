@@ -4,13 +4,13 @@ import 'package:latihan_11pplg2/models/player.dart';
 class PlayerController extends GetxController {
   var players = <Player>[
     Player(
-      image: 'https://i.pinimg.com/736x/25/c8/82/25c88270a5ad16b7a6cc45b4c828b974.jpg',
+      image: 'https://i.pinimg.com/736x/bd/ae/e4/bdaee48b08c66db5f28eaf9595a6661c.jpg',
       name: 'Cristiano Ronaldo',
       position: 'Forward',
       number: 7,
     ),
     Player(
-      image: 'https://imageio.forbes.com/specials-images/imageserve/663e595b4509f97fdafb95f5/0x0.jpg?format=jpg&crop=383,383,x1045,y23,safe&height=416&width=416&fit=bounds',
+      image: 'https://i.pinimg.com/1200x/59/59/65/595965774b453a3c2e10d43319c9a24b.jpg',
       name: 'Lionel Messi',
       position: 'Midfielder',
       number: 10,

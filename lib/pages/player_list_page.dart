@@ -29,9 +29,9 @@ class PlayerListPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Squad Pemain'),
+        title: const Text('All Star Players'),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 237, 4, 245),
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         foregroundColor: Colors.white,
         elevation: 4,
       ),
@@ -55,7 +55,7 @@ class PlayerListPage extends StatelessWidget {
             childAspectRatio: 0.8,
           ),
           itemCount: controller.players.length,
-          itemBuilder: (context, index) {
+          itemBuilder: (context, index) { 
             final player = controller.players[index];
             return GestureDetector(
               onTap: () {

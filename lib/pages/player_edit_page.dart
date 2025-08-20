@@ -49,7 +49,7 @@ class _PlayerEditPageState extends State<PlayerEditPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(index == -1 ? 'Tambah Pemain' : 'Edit Pemain'),
-        backgroundColor: const Color.fromARGB(255, 255, 0, 195),
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         foregroundColor: Colors.white,
       ),
       body: Padding(
@@ -64,7 +64,7 @@ class _PlayerEditPageState extends State<PlayerEditPage> {
               controller: numberController,
               label: 'Nomor Punggung',
               keyboardType: TextInputType.number,
-            ),
+            ),  
             const SizedBox(height: 16),
             _buildInputField(controller: imageController, label: 'URL Gambar'),
             const SizedBox(height: 24),
